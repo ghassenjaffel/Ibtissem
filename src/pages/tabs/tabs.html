@@ -1,0 +1,26 @@
+
+<ion-content padding>
+        <div *ngIf="type!=t; else elseBlock ">
+    <ion-tabs color="primary">
+      
+        <ion-tab [root]="Profile" tabTitle="Profile" tabIcon="contact"></ion-tab>
+    
+        <ion-tab [root]="MesMsg" tabTitle="Mes Message" tabIcon="chatboxes"></ion-tab>
+        <ion-tab [root]="Mesres" tabTitle="Mes Reservation" tabIcon="list"></ion-tab>
+       
+       
+      </ion-tabs>
+        </div>
+        <ng-template #elseBlock>
+                <ion-tabs color="primary">
+      
+                        <ion-tab [root]="Profile" tabTitle="Profile" tabIcon="contact"></ion-tab>
+                        <ion-tab [root]="Add" tabTitle="Ajouter Trajet" tabIcon="add-circle"></ion-tab>
+                        <ion-tab [root]="TajetList" tabTitle="Mes Trajet" tabIcon="compass"></ion-tab>
+                        <ion-tab [root]="MesMsg" tabTitle="Mes Message" tabIcon="chatboxes"></ion-tab>
+                     
+                        <ion-tab [root]="DemandeRes" tabTitle="Demande de reservation" tabIcon="list" tabBadge={{(MesDemande)?.length}}  tabBadgeStyle="danger"></ion-tab>
+                       
+                      </ion-tabs>
+        </ng-template>
+</ion-content>

@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+        <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+              <ion-title>MesReservation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content padding>
+  <ion-list>
+    <div *ngFor="let res of MesRes ">
+    <ion-item-sliding #item>
+      <ion-item>
+         de {{res.de}} Ver {{res.ver}} <span class="state" [class.accept]=" res.state === accept " [class.wait]=" res.state === wait " [class.refused]=" res.state === refused "> Statut :  {{res.state}}</span>
+      </ion-item>
+      <ion-item-options side="left"  >
+          <button  ion-button color="danger" (click)="refuser(res)">  Annuler</button>
+        </ion-item-options>
+
+    </ion-item-sliding>
+    </div>
+
+  </ion-list>
+</ion-content>

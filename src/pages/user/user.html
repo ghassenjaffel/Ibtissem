@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+        <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content parallax-header no-bounce class="bg-modal">
+    <div *ngIf="profile?.type!=Choufeur">hello</div>
+
+<div class="header-image"></div>
+<div class="main-content" text-wrap text-center>
+    <div class="circular"></div>
+    <h2>{{(profile | async)?.name}}</h2>
+    
+    <p class="profile-description">{{(profile | async)?.type}}</p>
+    <hr>
+    <ion-list no-lines>
+        <ion-item>
+            <ion-icon name="mail" color="primary" item-start></ion-icon>
+            <p>Email</p>
+            {{(profile | async)?.email}}
+            <a button ion-button href="mailto:{{(profile | async)?.email}}" color="primary" item-end medium>Open App</a>
+        </ion-item>
+        <ion-item>
+            <ion-icon item-start name="call" color="danger"></ion-icon>
+            <p>Mobile</p>
+            {{(profile | async)?.phone}}
+            
+        </ion-item>
+        <ion-item>
+            <ion-icon item-start name="ios-contact" color="secondary"></ion-icon>
+            <p>username</p>
+            {{(profile | async)?.username}}
+            
+        </ion-item>
+       
+    </ion-list>
+  
+  
+</div>
+
+
+
+
+</ion-content>
+
+
+
+
+
+
+
+

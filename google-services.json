@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "801097166710",
+    "firebase_url": "https://ibti-7f6a1.firebaseio.com",
+    "project_id": "ibti-7f6a1",
+    "storage_bucket": "ibti-7f6a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801097166710:android:a5ef7dd3d17cdde0",
+        "android_client_info": {
+          "package_name": "com.ibti.ibtissem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801097166710-loi41k3dhp330fq5a6r7th05ij1465cc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD70MN9rD_Uh-_3fBu8OfHcmcwWvYS5bfQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+
+    <div *ngFor="let trajet of trajetList ">
+
+        <ion-card (tap)="GoDetaille(trajet)">
+
+            <img src="./assets/imgs/l.jpg" />
+            <ion-card-content>
+                <ion-card-title>
+
+                    {{trajet.villedepart}} Vers {{trajet.arreverville}}
+                </ion-card-title>
+                <p>
+                    Jour de Depart : {{trajet.jourdepart.day}}/{{trajet.jourdepart.month}}/{{trajet.jourdepart.year}}
+                </p>
+                <p>
+                    Heur de Depart : {{trajet.heurdepart.hour}}:{{trajet.heurdepart.minute}}
+                </p>
+                <p>
+                    Conducteur: {{trajet.name}}
+                </p>
+                <p>
+                    Numero de Telephne: {{trajet.Phone}}
+                </p>
+                <p>
+                    <b>Nombre de Place Libre:   {{trajet.nbPlaceLibre}}</b>
+                </p>
+
+                <p>
+                    <b>Matricule: {{trajet.Matricule}} </b>
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+    </div>
+
+</ion-content>

@@ -1,0 +1,131 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-title>
+          AjouterTrajeter
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content text-center class="vertical-align-content">
+   
+
+
+  <ion-grid>
+    <ion-row>
+          <ion-col>
+  <ion-list >
+
+
+     
+
+
+      <ion-item>
+          <ion-label>ville de depart</ion-label>
+          <ion-select [(ngModel)]="toppings" multiple="false" cancelText="Annuler" okText="Okay!" #departville>
+            <ion-option value="Tunis" >Tunis</ion-option>
+            <ion-option value="Sfax">Sfax</ion-option>
+            <ion-option value="Sousse" >Sousse</ion-option>
+            <ion-option value="Kairouan">Kairouan</ion-option>
+            <ion-option value="Gabès">Gabès</ion-option>
+            <ion-option value="Bizerte">Bizerte</ion-option>
+            <ion-option value="Ariana">Ariana</ion-option>
+            <ion-option value="Gafsa">Gafsa</ion-option>
+            <ion-option value="Kasserine">Kasserine</ion-option>
+            <ion-option value="Ben Arous">Ben Arous</ion-option>
+
+            <ion-option value="Manouba">Manouba</ion-option>
+            <ion-option value="Nabeul">Nabeul</ion-option>
+            <ion-option value="Zaghouan">Zaghouan</ion-option>
+            <ion-option value="Béja">Béja</ion-option>
+            <ion-option value="Jendouba">Jendouba</ion-option>
+
+            <ion-option value="Kef">Kef</ion-option>
+            <ion-option value="Siliana">Siliana</ion-option>
+            <ion-option value="Monastir">Monastir</ion-option>
+            <ion-option value="Mahdia">Mahdia</ion-option>
+            <ion-option value="Sidi Bouzid">Sidi Bouzid</ion-option>
+
+            <ion-option value="Mednine">Mednine</ion-option>
+            <ion-option value="Tataouine">Tataouine</ion-option>
+            <ion-option value="Tozeur">Tozeur</ion-option>
+            <ion-option value="Kebili">Kebili</ion-option>
+          </ion-select>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>ville d'arriver</ion-label>
+            <ion-select  multiple="false" cancelText="Annuler" okText="Okay!" #arreverville>
+                <ion-option value="Tunis" >Tunis</ion-option>
+                <ion-option value="Sfax">Sfax</ion-option>
+                <ion-option value="Sousse" >Sousse</ion-option>
+                <ion-option value="Kairouan">Kairouan</ion-option>
+                <ion-option value="Gabès">Gabès</ion-option>
+                <ion-option value="Bizerte">Bizerte</ion-option>
+                <ion-option value="Ariana">Ariana</ion-option>
+                <ion-option value="Gafsa">Gafsa</ion-option>
+                <ion-option value="Kasserine">Kasserine</ion-option>
+                <ion-option value="Ben Arous">Ben Arous</ion-option>
+    
+                <ion-option value="Manouba">Manouba</ion-option>
+                <ion-option value="Nabeul">Nabeul</ion-option>
+                <ion-option value="Zaghouan">Zaghouan</ion-option>
+                <ion-option value="Béja">Béja</ion-option>
+                <ion-option value="Jendouba">Jendouba</ion-option>
+    
+                <ion-option value="Kef">Kef</ion-option>
+                <ion-option value="Siliana">Siliana</ion-option>
+                <ion-option value="Monastir">Monastir</ion-option>
+                <ion-option value="Mahdia">Mahdia</ion-option>
+                <ion-option value="Sidi Bouzid">Sidi Bouzid</ion-option>
+    
+                <ion-option value="Mednine">Mednine</ion-option>
+                <ion-option value="Tataouine">Tataouine</ion-option>
+                <ion-option value="Tozeur">Tozeur</ion-option>
+                <ion-option value="Kebili">Kebili</ion-option>
+            </ion-select>
+          </ion-item>
+<br>
+   <ion-item>
+      <ion-label> jour  de  depart</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month" #jourdepart></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>heur d'Depart</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts" #heurdepart></ion-datetime>
+    </ion-item>
+    
+
+ 
+      <ion-item class="pos">
+        
+          <ion-input #Name fixed placeholder="Nom Du Conducteur" > </ion-input>
+        </ion-item>
+        
+        <ion-item class="pos">
+        
+            <ion-input #Prix type="number" placeholder="prix" fixed ></ion-input>
+
+         </ion-item>
+           
+         <ion-item class="pos">
+        
+            <ion-input #Matricule  placeholder="Matricule" fixed ></ion-input>
+  
+         </ion-item>
+         <ion-item class="pos">
+        
+            <ion-input #NbPlace type="number"  placeholder="Nombre de place" fixed ></ion-input>
+  
+         </ion-item>
+  </ion-list>
+ 
+  <div padding>
+    <button ion-button color="primary" block (tap)="ajouter()">Ajouter</button>
+  </div>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

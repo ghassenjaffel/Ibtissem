@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+
+
+   
+        <ion-content padding class="form-content">
+            <form class="form" [formGroup]="validations_form"  (ngSubmit)="onSubmit(validations_form.value)">
+              <ion-item>
+                <ion-label floating color="primary">Username</ion-label>
+                <ion-input type="text" formControlName="username" class="form-controll" required></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.username">
+                  <div class="error-message" *ngIf="validations_form.get('username').hasError(validation.type) && (validations_form.get('username').dirty || validations_form.get('username').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+          
+       
+              <div formGroupName="matching_passwords">
+                <ion-item>
+                  <ion-label floating color="primary">Password</ion-label>
+                  <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message" *ngIf="validations_form.get('matching_passwords').get('password').hasError(validation.type) && (validations_form.get('matching_passwords').get('password').dirty || validations_form.get('matching_passwords').get('password').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+          
+              
+              </div>
+              <!-- These validations are for the form group -->
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.matching_passwords">
+                  <div class="error-message" *ngIf="validations_form.get('matching_passwords').hasError(validation.type) && (validations_form.get('matching_passwords').get('confirm_password').dirty || validations_form.get('matching_passwords').get('confirm_password').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+          
+      
+              <button ion-button block type="submit">Login</button>
+
+              <div  class="vertical-align-content">
+
+                <a  href="#" (click)="signup()">SignUp</a>
+
+
+              </div>
+              
+            </form>
+          </ion-content>

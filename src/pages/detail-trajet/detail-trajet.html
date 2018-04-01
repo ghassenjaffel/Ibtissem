@@ -1,0 +1,179 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>DetailTrajet</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div *ngIf="connected ; else NotConnected">
+
+        <div *ngIf="trajet?.owner!=owner; else elseBlock ">
+            <ion-card>
+                <button (tap)="sandmsg()" class="msg">
+                <ion-icon name="chatbubbles" ></ion-icon> 
+        </button>
+                <img src="./assets/imgs/l.jpg" />
+                <ion-card-content>
+                    <ion-card-title>
+                        &nbsp;&nbsp;
+                        <ion-icon name="pin" color="secondary" item-start></ion-icon>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>{{trajet.villedepart}}</b> Ver <b>{{trajet.arreverville}} </b>
+                    </ion-card-title>
+
+                    <ion-item>
+                        <ion-icon name="sunny" color="secondary" item-start></ion-icon>
+                        Jour de Depart : {{trajet.jourdepart.day}}/{{trajet.jourdepart.month}}/{{trajet.jourdepart.year}}
+
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-icon name="clock" color="secondary" item-start></ion-icon>
+                        Heur de Depart : {{trajet.heurdepart.hour}}:{{trajet.heurdepart.minute}}
+
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-icon name="call" color="secondary" item-start></ion-icon>
+                        <p>Numero de Telephne:</p>
+                        {{trajet.Phone}}
+                        <a button ion-button href="tel:{{trajet.Phone}}" color="primary" item-end medium>Appeler</a>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon name="body" color="secondary" item-start></ion-icon>
+                        <p>Nombre de Place Libre:</p>
+                        {{trajet.nbPlaceLibre}}
+                        <button ion-button color="secondary" item-end medium (click)="Reserver()" [disabled]="state">Reserver</button >
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="logo-bitcoin" color="secondary" item-start></ion-icon>
+                          Prix: {{trajet.Prix}} Dt
+                    
+              
+                </ion-item>
+                <ion-item>
+                        <ion-icon name="card" color="secondary" item-start></ion-icon>
+
+                        Matricule: {{trajet.Matricule}} 
+                        
+                 </ion-item>
+                
+            </ion-card-content>
+        </ion-card>
+      </div>
+      <ng-template #elseBlock>
+
+      <div>
+
+            <ion-card >
+      
+                    <img src="./assets/imgs/l.jpg"/>
+                        <ion-card-content>
+                            <ion-card-title>
+                                &nbsp;&nbsp;  <ion-icon name="pin" color="secondary" item-start></ion-icon>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                           <b>{{trajet.villedepart}}</b>  Ver <b>{{trajet.arreverville}} </b>
+                            </ion-card-title>
+            
+                            <ion-item>
+                                <ion-icon name="sunny" color="secondary" item-start></ion-icon>
+                                Jour de Depart :
+                                {{trajet.jourdepart.day}}/{{trajet.jourdepart.month}}/{{trajet.jourdepart.year}}
+                                
+                            </ion-item>
+                        
+            
+                            <ion-item>
+                                <ion-icon name="clock" color="secondary" item-start></ion-icon>
+                                Heur de Depart :
+                                {{trajet.heurdepart.hour}}:{{trajet.heurdepart.minute}}
+                                
+                            </ion-item>
+                            
+            
+                             <ion-item>
+                                <ion-icon name="call" color="secondary" item-start></ion-icon>
+                                <p>Numero de Telephne:</p>
+                                {{trajet.Phone}}
+                               
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon name="body" color="secondary" item-start></ion-icon>
+                                <p>Nombre de Place Libre:</p>
+                                {{trajet.nbPlaceLibre}}
+                            
+                            </ion-item>
+                            <ion-item>
+                                    <ion-icon name="card" color="secondary" item-start></ion-icon>
+                                    
+                                    Matricule: {{trajet.Matricule}} 
+                                    
+                             </ion-item>
+                          
+                            <button ion-button full color="secondary" (click)="Modifier(trajet)">Modifier</button>
+                </ion-card-content>
+            </ion-card>
+
+        </div>
+
+
+        </ng-template>
+    </div>
+    <ng-template #NotConnected>
+
+        <div>
+
+            <ion-card>
+                <button (tap)="sandmsg()" class="msg">
+                            <ion-icon name="chatbubbles" ></ion-icon> 
+                         </button>
+                <img src="./assets/imgs/l.jpg" />
+                <ion-card-content>
+                    <ion-card-title>
+                        &nbsp;&nbsp;
+                        <ion-icon name="pin" color="secondary" item-start></ion-icon>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>{{trajet.villedepart}}</b> Ver <b>{{trajet.arreverville}} </b>
+                    </ion-card-title>
+
+                    <ion-item>
+                        <ion-icon name="sunny" color="secondary" item-start></ion-icon>
+                        Jour de Depart : {{trajet.jourdepart.day}}/{{trajet.jourdepart.month}}/{{trajet.jourdepart.year}}
+
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-icon name="clock" color="secondary" item-start></ion-icon>
+                        Heur de Depart : {{trajet.heurdepart.hour}}:{{trajet.heurdepart.minute}}
+
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-icon name="call" color="secondary" item-start></ion-icon>
+                        <p>Numero de Telephne:</p>
+                        {{trajet.Phone}}
+                        <a button ion-button href="tel:{{trajet.Phone}}" color="primary" item-end medium>Appeler</a>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon name="body" color="secondary" item-start></ion-icon>
+                        <p>Nombre de Place Libre:</p>
+                        {{trajet.nbPlaceLibre}}
+                        <a button ion-button color="secondary" item-end medium>Reserver</a>
+                    </ion-item>
+
+
+                </ion-card-content>
+            </ion-card>
+
+        </div>
+
+
+    </ng-template>
+</ion-content>

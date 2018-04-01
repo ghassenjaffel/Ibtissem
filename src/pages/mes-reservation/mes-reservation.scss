@@ -1,0 +1,14 @@
+page-mes-reservation {
+.state{
+    float:right;
+}
+.state.wait{
+color:rgb(151, 219, 50);
+}
+.state.refused{
+color:red;
+}
+.state.accept{
+    color:rgb(151, 219, 50);
+}
+}

@@ -1,0 +1,28 @@
+page-login {
+    .terms-checkbox-label
+  {
+    overflow: visible;
+    text-overflow: initial;
+    white-space: initial;
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .error-message
+  {
+    color: red;
+  }
+  .vertical-align-content > *
+  {
+       display: flex;
+       align-content: center;
+       align-items: center;
+       flex-direction: column;
+       margin-top: 5%;
+      
+  }
+
+ 
+ 
+}
